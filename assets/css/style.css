@@ -16,8 +16,8 @@ a, a:hover, a:focus {
 img { max-width: 100%; }
 
 ::-moz-selection { background: #ccc; color: #fff; text-shadow: none; }
-::selection { background: #ccc; color: #fff; text-shadow: none; }
 
+::selection { background: #ccc; color: #fff; text-shadow: none; }
 
 /***** Top menu *****/
 
