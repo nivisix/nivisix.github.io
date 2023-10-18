@@ -32,17 +32,19 @@ nav {
 }
 
 nav .nav-links { text-align: right; }
+
 nav .nav-logo { text-align: left; }
 
-nav .nav-logo a {
-	display: inline-block;
-	width: 134px;
-	height: 43px;
-	margin: 7px 0 0 0;
-	padding: 0;
-	background: url(../img/logo.png) left center no-repeat;
-	text-indent: -9999px;
-}
+	nav .nav-logo a {
+		display: inline-block;
+		width: 134px;
+		height: 43px;
+		margin: 7px 0 0 0;
+		padding: 0;
+		background: url(../img/logo.png) center no-repeat;
+		background-size: 55px 43px;
+		text-indent: -9999px;
+	}
 
 nav .show-menu {
 	display: none;
@@ -101,6 +103,7 @@ nav .show-menu span {
 	height: 273px;
 	cursor: pointer;
 }
+
 .top-content-video img { width: 71px; height: 74px; margin-top: 80px; }
 
 .top-content-video p {
@@ -248,7 +251,6 @@ nav .show-menu span {
 	line-height: 16px;
 	text-transform: uppercase;
 }
-
 
 /***** Our team *****/
 
@@ -432,6 +434,7 @@ nav .show-menu span {
 	text-align: left;
 	overflow: hidden;
 }
+
 .blog-single-article:first-child { border-top: 1px solid #e0dee2; }
 
 .blog-single-article .blog-title {
@@ -444,6 +447,7 @@ nav .show-menu span {
 	color: #9ccbc0;
 	line-height: 26px;
 }
+
 .blog-single-article .blog-title a, .blog-single-article .blog-title a:hover { color: #9ccbc0; }
 
 .blog-single-article .blog-author {
@@ -479,8 +483,8 @@ nav .show-menu span {
 .blog-all-posts {
 	margin-top: 30px;
 }
-.blog-all-posts a { margin: 0; -moz-box-shadow: none; -webkit-box-shadow: none; box-shadow: none; }
 
+.blog-all-posts a { margin: 0; -moz-box-shadow: none; -webkit-box-shadow: none; box-shadow: none; }
 
 /***** Slider *****/
 
