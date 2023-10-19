@@ -92,6 +92,7 @@ nav .show-menu span {
 	width: 571px;
 	height: 405px;
 }
+
 .top-content-computer-container img { width: 100%; }
 
 .top-content-video {
@@ -155,8 +156,7 @@ nav .show-menu span {
 }
 
 .services-box .services-box-icon {
-    width: 111px;
-    height: 111px;
+    width: 190px;
     margin: 0 auto;
 }
 
@@ -579,9 +579,7 @@ nav .show-menu span {
 }
 
 .address {
-	width: 370px;
-	height: 457px;
-	padding-top: 1px;
+	padding: 5px;
 	background: #fff;
 	-moz-border-radius: 4px;
     -webkit-border-radius: 4px;
@@ -592,7 +590,6 @@ nav .show-menu span {
 }
 
 .address h3 {
-	margin-top: 72px;
 	font-family: 'signikabold', sans-serif;
 	font-size: 25px;
 	color: #464c5c;
