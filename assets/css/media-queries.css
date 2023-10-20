@@ -195,37 +195,73 @@
     	background-image: url(../img/icons/branding@2x.png) !important; background-repeat: no-repeat !important; background-size: 24px 24px !important;
     }
     .custom-select-image.custom-select-image-dtp {
-    	background-image: url(../img/icons/dtp@2x.png) !important; background-repeat: no-repeat !important; background-size: 24px 24px !important;
+    	background-image: url(../img/icons/dtp@2x.png) !important; 
+		background-repeat: no-repeat !important; 
+		background-size: 24px 24px !important;
     }
+
     .custom-select-image.custom-select-image-tv-campanies {
-    	background-image: url(../img/icons/tv-campanies@2x.png) !important; background-repeat: no-repeat !important; background-size: 24px 24px !important;
+    	background-image: url(../img/icons/tv-campanies@2x.png) !important; 
+		background-repeat: no-repeat !important; 
+		background-size: 24px 24px !important;
     }
     
     /* social icons */
     .button-social-1.button-facebook-1 {
-    	background-image: url(../img/icons/social/facebook@2x.png) !important; background-repeat: no-repeat !important; background-size: 24px 24px !important;
+    	background-image: url(../img/icons/social/facebook@2x.png) !important; 
+		background-repeat: no-repeat !important; 
+		background-size: 24px 24px !important;
 	}
+
 	.button-social-1.button-google-plus-1 {
-    	background-image: url(../img/icons/social/google-plus@2x.png) !important; background-repeat: no-repeat !important; background-size: 24px 24px !important;
+    	background-image: url(../img/icons/social/google-plus@2x.png) !important; 
+		background-repeat: no-repeat !important; 
+		background-size: 24px 24px !important;
 	}
+
 	.button-social-1.button-twitter-1 {
-    	background-image: url(../img/icons/social/twitter@2x.png) !important; background-repeat: no-repeat !important; background-size: 24px 24px !important;
+    	background-image: url(../img/icons/social/twitter@2x.png) !important; 
+		background-repeat: no-repeat !important; 
+		background-size: 24px 24px !important;
 	}
+
 	.button-social-1.button-pinterest-1 {
-    	background-image: url(../img/icons/social/pinterest@2x.png) !important; background-repeat: no-repeat !important; background-size: 24px 24px !important;
+    	background-image: url(../img/icons/social/pinterest@2x.png) !important; 
+		background-repeat: no-repeat !important; 
+		background-size: 24px 24px !important;
+	}
+
+	.button-social-1.button-instagram-1 {
+		background-image: url(../img/icons/social/instagram@2x.png) !important;
+		background-repeat: no-repeat !important;
+		background-size: 24px 24px !important;
 	}
 	
 	.button-social-2.button-facebook-2 {
-    	background-image: url(../img/icons/social/facebook@2x.png) !important; background-repeat: no-repeat !important; background-size: 24px 24px !important;
+    	background-image: url(../img/icons/social/facebook@2x.png) !important; 
+		background-repeat: no-repeat !important; 
+		background-size: 24px 24px !important;
 	}
 	.button-social-2.button-google-plus-2 {
-    	background-image: url(../img/icons/social/google-plus@2x.png) !important; background-repeat: no-repeat !important; background-size: 24px 24px !important;
+    	background-image: url(../img/icons/social/google-plus@2x.png) !important; 
+		background-repeat: no-repeat !important; 
+		background-size: 24px 24px !important;
 	}
 	.button-social-2.button-twitter-2 {
-    	background-image: url(../img/icons/social/twitter@2x.png) !important; background-repeat: no-repeat !important; background-size: 24px 24px !important;
+    	background-image: url(../img/icons/social/twitter@2x.png) !important; 
+		background-repeat: no-repeat !important; 
+		background-size: 24px 24px !important;
 	}
 	.button-social-2.button-pinterest-2 {
-    	background-image: url(../img/icons/social/pinterest@2x.png) !important; background-repeat: no-repeat !important; background-size: 24px 24px !important;
+    	background-image: url(../img/icons/social/pinterest@2x.png) !important; 
+		background-repeat: no-repeat !important; 
+		background-size: 24px 24px !important;
+	}
+
+	.button-social-2.button-instagram-2 {
+		background-image: url(../img/icons/social/instagram@2x.png) !important;
+		background-repeat: no-repeat !important;
+		background-size: 24px 24px !important;
 	}
 	
 	/* blog */

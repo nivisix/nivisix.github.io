@@ -562,7 +562,7 @@ nav .show-menu span {
 
 .map-container {
 	position: relative;
-	min-height: 660px;
+	padding-bottom: 10px;
 	margin: 0 auto;
 }
 
@@ -575,7 +575,7 @@ nav .show-menu span {
 }
 
 .address-container {
-	padding-top: 65px;
+	
 }
 
 .address {
@@ -589,12 +589,12 @@ nav .show-menu span {
 	box-shadow: 0 2px 5px 0 rgba(8, 8, 8, 0.4);
 }
 
-.address h3 {
-	font-family: 'signikabold', sans-serif;
-	font-size: 25px;
-	color: #464c5c;
-	line-height: 25px;
-}
+	.address h3 {
+		font-family: 'signikabold', sans-serif;
+		font-size: 25px;
+		color: #2B6CA7;
+		line-height: 25px;
+	}
 
 .address p {
 	margin: 30px 0 0 0;
@@ -605,7 +605,6 @@ nav .show-menu span {
 }
 
 .address .address-box-social { margin-top: 35px; }
-
 
 /***** Contact us *****/
 
@@ -651,8 +650,11 @@ nav .show-menu span {
 }
 
 .contact-us-form form .contact-us-input-container { position: relative; margin-top: 30px; }
+
 .contact-us-form form .contact-us-form-left .contact-us-input-container:first-child, 
-.contact-us-form form .contact-us-form-right .contact-us-input-container:first-child { margin-top: 0; }
+.contact-us-form form .contact-us-form-right .contact-us-input-container:first-child { 
+	margin-top: 0; 
+}
 
 .contact-us-form form label {
 	position: absolute;
