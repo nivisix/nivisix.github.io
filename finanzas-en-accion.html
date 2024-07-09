@@ -123,6 +123,11 @@
 									<input type="text" id="contact-us-phone" name="contact-us-phone"
 										   placeholder="Teléfono...">
 								</div>
+								<div class="contact-us-input-container">
+									<label for="contact-us-branding" class="contact-us-branding-label"></label>
+									<input type="text" id="contact-us-branding" name="contact-us-branding"
+										   placeholder="Código de Referido">
+								</div>
 							</div>
 							<div class="contact-us-form-right">
 								<div class="contact-us-input-container">
@@ -167,6 +172,7 @@
                     subject: "Finanzas en Acción",
                     message: `Teléfono: ${document.getElementById("contact-us-phone").value}, `
                         + `Mensaje: ${document.getElementById("contact-us-message").value},`
+			+ `Código: ${document.getElementById("contact-us-branding").value},`
                 };
 
                 emailjs.send("service_gc4pvxe", "template_yzr484j", params)
