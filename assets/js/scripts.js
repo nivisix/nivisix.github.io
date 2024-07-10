@@ -24,7 +24,10 @@ function scroll_to(clicked_link, nav_height) {
 
 $(document).ready(function() {
 	const searchParams = new URLSearchParams(window.location.search);
-	$('#contact-us-branding').val(searchParams.get('code'));
+	if (searchParams.get('code')) {
+		$('#contact-us-branding').val(searchParams.get('code'));
+		$('#contact-us-message').val('Deseo inscribirme al curso con el código de referido: ' + searchParams.get('code'));
+	}
     /*
 	    Navigation
 	*/
