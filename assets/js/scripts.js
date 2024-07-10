@@ -23,7 +23,8 @@ function scroll_to(clicked_link, nav_height) {
 
 
 $(document).ready(function() {
-	
+	const searchParams = new URLSearchParams(window.location.search);
+	$('#contact-us-branding').val(searchParams.get('code'));
     /*
 	    Navigation
 	*/
