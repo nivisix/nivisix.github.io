@@ -82,6 +82,7 @@ nav .show-menu span {
 	text-shadow: 5px 5px 1px rgba(20, 28, 1, 0.4);
 	background-color: rgba(0, 0, 0, 0.2);
 	width: 500px;
+	margin: auto;
 }
 
 	.top-content-text h1 span.top-content-text-big {
@@ -95,6 +96,7 @@ nav .show-menu span {
 		width: 600px;
 		color: white;
 		background-color: rgba(0, 0, 0, 0.2);
+		margin: auto;
 	}
 
 .top-content-computer-container {
