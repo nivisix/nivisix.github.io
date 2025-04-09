@@ -65,8 +65,10 @@ nav .show-menu span {
 }
 
 .inner-bg {
-	padding: 155px 0 70px 0;
-	background: url(../img/money.jpg) left 109px repeat;
+    padding: 155px 0 70px 0;
+    background: url(../img/money.jpg) repeat;
+    background-size: 800px;
+    width: 100%;
 }
 
 .top-content-text h1 {
