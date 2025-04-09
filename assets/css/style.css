@@ -74,10 +74,10 @@ nav .show-menu span {
 .top-content-text h1 {
 	font-family: 'signikalight', sans-serif;
 	font-size: 36px;
-	color: #fff;
+	color: black;
 	line-height: 40px;
 	text-transform: uppercase;
-	text-shadow: 0 2px 0 rgba(8, 8, 8, 0.4);
+	text-shadow: 5px 5px 1px rgba(20, 28, 1, 0.4);
 }
 
 	.top-content-text h1 span.top-content-text-big {
