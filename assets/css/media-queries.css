@@ -176,7 +176,7 @@
 
 @media (max-width: 360px) {
 	
-	.top-content-text h1 { font-size: 30px; line-height: 36px; }
+	.top-content-text h1 { font-size: 30px; line-height: 36px; max-width: 100% }
 	.top-content-text h1 span.top-content-text-big { font-size: 32px; line-height: 38px; }
 	.portfolio h2, .team h2, .reviews h2, .blog h2, .project-valuation h2, .contact-us h2 { font-size: 32px; line-height: 50px; }
 	
@@ -335,4 +335,5 @@
 		background-image: url(../img/icons/branding-hover@2x.png) !important; background-repeat: no-repeat !important; background-size: 24px 24px !important;
 	}
 }
+
 
