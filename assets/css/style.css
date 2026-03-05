@@ -31,16 +31,27 @@ nav {
 
 nav .nav-links { text-align: right; }
 
-nav .nav-logo { text-align: left; }
+nav .nav-logo { text-align: center; }
 
 	nav .nav-logo a {
 		display: inline-block;
 		width: 134px;
-		height: 43px;
+		height: 60px;
 		margin: 7px 0 0 0;
 		padding: 0;
 		background: url(../img/logo.png) center no-repeat;
-		background-size: 55px 43px;
+		background-size: auto 60px;
+		text-indent: -9999px;
+	}
+
+	nav .nav-logo-hari-om a {
+		display: inline-block;
+		width: 134px;
+		height: 60px;
+		margin: 7px 0 0 0;
+		padding: 0;
+		background: url(../img/hariom.jpg) center no-repeat;
+		background-size: auto 60px;
 		text-indent: -9999px;
 	}
 
