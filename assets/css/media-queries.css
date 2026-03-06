@@ -195,7 +195,9 @@
     
     /* logo */
     nav .nav-logo a {
-    	background-image: url(../img/logo@2x.png) !important; background-repeat: no-repeat !important; background-size: 55px 43px !important;
+    	background-image: url(../img/logo@2x.png) !important; 
+		background-repeat: no-repeat !important; 
+		background-size: auto 60px !important;
     }
     
     /* show menu */
