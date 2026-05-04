@@ -1,0 +1,527 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Finanzas en Acción — Curso Nívisix</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800;900&display=swap" rel="stylesheet">
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --cyan:        #1fb4e6;
+      --cyan-light:  #d4eef8;
+      --cyan-medium: #8dd4f0;
+      --teal:        #0d3d52;
+      --teal-mid:    #1a5c78;
+      --text:        #1a2b35;
+      --text-soft:   #3a5a6a;
+    }
+
+    body {
+      font-family: 'Nunito', 'Segoe UI', Arial, sans-serif;
+      background: #dce8ef;
+      color: var(--text);
+    }
+
+    /* ── Página ──────────────────────────────────────── */
+    .page {
+      width: 210mm;
+      min-height: 297mm;
+      background: #fff;
+      margin: 24px auto;
+      box-shadow: 0 6px 28px rgba(0,0,0,.18);
+      overflow: hidden;
+      page-break-after: always;
+    }
+
+    /* ── Encabezado ──────────────────────────────────── */
+    .header {
+      background: var(--cyan);
+      padding: 26px 32px 22px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .header-curso {
+      font-size: 54pt;
+      font-weight: 900;
+      color: var(--teal);
+      line-height: 1;
+      letter-spacing: -2px;
+      position: relative;
+      z-index: 2;
+    }
+
+    .header-title {
+      font-size: 19pt;
+      font-weight: 900;
+      color: #fff;
+      line-height: 1.15;
+      text-transform: uppercase;
+      position: relative;
+      z-index: 2;
+    }
+
+    /* formas decorativas */
+    .header::before {
+      content: '';
+      position: absolute;
+      right: -10px; top: -40px;
+      width: 200px; height: 200px;
+      background: var(--teal);
+      border-radius: 40% 60% 55% 45% / 50% 45% 55% 50%;
+      opacity: .3;
+      transform: rotate(15deg);
+    }
+    .header::after {
+      content: '';
+      position: absolute;
+      right: 60px; top: 15px;
+      width: 140px; height: 140px;
+      background: var(--teal);
+      border-radius: 60% 40% 30% 70% / 40% 60% 40% 60%;
+      opacity: .2;
+      transform: rotate(-10deg);
+    }
+
+    /* ── Tabla de info ───────────────────────────────── */
+    .info-grid {
+      display: grid;
+      grid-template-columns: 115px 1fr 195px;
+      border-left: 1px solid var(--cyan-medium);
+      border-top: 1px solid var(--cyan-medium);
+    }
+
+    .info-cell {
+      padding: 10px 14px;
+      border-right: 1px solid var(--cyan-medium);
+      border-bottom: 1px solid var(--cyan-medium);
+      font-size: 11.5pt;
+      line-height: 1.4;
+    }
+
+    .info-label {
+      background: var(--cyan-light);
+      font-weight: 800;
+      color: var(--teal);
+    }
+
+    .info-value { background: #fff; color: var(--text); }
+
+    .info-center { text-align: center; }
+
+    /* ── Encabezado de sección ───────────────────────── */
+    .section-header {
+      background: var(--teal);
+      color: #fff;
+      font-size: 13pt;
+      font-weight: 900;
+      padding: 10px 20px;
+      letter-spacing: .8px;
+      text-transform: uppercase;
+    }
+
+    /* ── Texto de presentación ───────────────────────── */
+    .section-content {
+      padding: 14px 20px;
+    }
+
+    p {
+      font-size: 9.5pt;
+      line-height: 1.65;
+      text-align: justify;
+      color: var(--text);
+      margin-bottom: 9px;
+    }
+    p:last-child { margin-bottom: 0; }
+
+    /* ── Cuadrícula de temas ─────────────────────────── */
+    .topics-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 9px;
+      padding: 14px 20px 18px;
+    }
+
+    .topic-card {
+      border: 1px solid var(--cyan-medium);
+      border-radius: 7px;
+      overflow: hidden;
+    }
+
+    .topic-card-header {
+      background: var(--cyan-light);
+      padding: 7px 11px;
+      display: flex;
+      align-items: flex-start;
+      gap: 8px;
+    }
+
+    .topic-num {
+      min-width: 20px;
+      height: 20px;
+      background: var(--teal);
+      color: #fff;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 7.5pt;
+      font-weight: 900;
+      flex-shrink: 0;
+      margin-top: 1px;
+    }
+
+    .topic-name {
+      font-weight: 800;
+      font-size: 8.5pt;
+      color: var(--teal);
+      line-height: 1.25;
+    }
+
+    .topic-subtopics {
+      list-style: none;
+      padding: 6px 11px 8px 11px;
+    }
+
+    .topic-subtopics li {
+      font-size: 8pt;
+      color: var(--text-soft);
+      padding: 2px 0;
+      display: flex;
+      align-items: flex-start;
+      gap: 5px;
+      line-height: 1.3;
+    }
+
+    .topic-subtopics li::before {
+      content: '';
+      width: 5px; height: 5px;
+      background: var(--cyan);
+      border-radius: 50%;
+      margin-top: 3px;
+      flex-shrink: 0;
+    }
+
+    /* ── ¿Qué necesito? ──────────────────────────────── */
+    .needs-banner {
+      background: linear-gradient(135deg, var(--cyan) 0%, #12a0d4 100%);
+      padding: 22px 30px;
+      display: flex;
+      justify-content: space-around;
+      align-items: center;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .needs-banner::before {
+      content: '';
+      position: absolute;
+      left: -30px; bottom: -30px;
+      width: 110px; height: 110px;
+      background: var(--teal);
+      border-radius: 50%;
+      opacity: .18;
+    }
+
+    .needs-banner::after {
+      content: '';
+      position: absolute;
+      right: -20px; top: -20px;
+      width: 90px; height: 90px;
+      background: var(--teal);
+      border-radius: 50%;
+      opacity: .15;
+    }
+
+    .need-item {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 8px;
+      font-weight: 900;
+      font-size: 7.5pt;
+      text-transform: uppercase;
+      letter-spacing: .4px;
+      color: var(--teal);
+      position: relative;
+      z-index: 1;
+    }
+
+    .need-icon {
+      width: 50px; height: 50px;
+      background: #fff;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 24px;
+      line-height: 1;
+      box-shadow: 0 2px 8px rgba(13,61,82,.3);
+    }
+
+    /* ── Prácticas ───────────────────────────────────── */
+    .practices-header-row {
+      background: var(--cyan-light);
+      color: var(--teal);
+      font-weight: 800;
+      padding: 9px 20px;
+      font-size: 9pt;
+      border-bottom: 2px solid var(--cyan-medium);
+    }
+
+    .practices-list {
+      list-style: none;
+      padding: 6px 0;
+    }
+
+    .practices-list li {
+      padding: 8px 20px;
+      display: flex;
+      align-items: center;
+      gap: 11px;
+      font-size: 9.5pt;
+      color: var(--text);
+      border-bottom: 1px solid #eef6fb;
+      line-height: 1.3;
+    }
+
+    .practices-list li:last-child { border-bottom: none; }
+
+    .dot {
+      width: 9px; height: 9px;
+      background: var(--cyan);
+      border-radius: 50%;
+      flex-shrink: 0;
+    }
+
+    /* ── Pie de página ───────────────────────────────── */
+    .footer {
+      background: var(--teal);
+      color: rgba(255,255,255,.7);
+      font-size: 8pt;
+      text-align: center;
+      padding: 10px;
+      margin-top: auto;
+      letter-spacing: .5px;
+    }
+
+    .footer strong { color: #fff; }
+
+    /* ── Impresión ───────────────────────────────────── */
+    @media print {
+      * { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+      body { background: #fff; }
+      .page { margin: 0; box-shadow: none; width: 100%; }
+    }
+
+    @page { size: A4; margin: 0; }
+  </style>
+</head>
+<body>
+
+<!-- ═══════════════ PÁGINA 1 ═══════════════ -->
+<div class="page">
+
+  <div class="header">
+    <div class="header-curso">CURSO</div>
+    <div class="header-title">FINANZAS EN ACCIÓN:<br>¡TÚ FUTURO! ¡TÚ DINERO!</div>
+  </div>
+
+  <div class="info-grid">
+    <div class="info-cell info-label">Metodología</div>
+    <div class="info-cell info-value">60% Práctico, 40% Teórico</div>
+    <div class="info-cell info-label info-center">Duración</div>
+
+    <div class="info-cell info-label">Inversión</div>
+    <div class="info-cell info-value">$800 MXN</div>
+    <div class="info-cell info-value info-center">6 clases de 1.5 horas</div>
+
+    <div class="info-cell info-label">Instructor</div>
+    <div class="info-cell info-value">Ing. César Arturo Martínez</div>
+    <div class="info-cell info-value info-center">Todos los jueves</div>
+  </div>
+
+  <div class="section-header">PRESENTACIÓN</div>
+  <div class="section-content">
+    <p>¡Bienvenidos al emocionante viaje hacia la libertad financiera! Estamos encantados de presentarles nuestro curso: "Finanzas en Acción ¡Tu Futuro, Tu Dinero!".</p>
+    <p>En nuestros días, el mundo está lleno de oportunidades, y entender cómo manejar tu dinero es clave para construir un futuro sólido y próspero. Este curso está diseñado especialmente para brindarte las herramientas y conocimientos necesarios para tomar decisiones financieras inteligentes desde el principio.</p>
+    <p>Únete a nosotros en este viaje educativo mientras te equipamos con las habilidades necesarias para tomar el control de tu futuro financiero. ¡Prepárate para tomar decisiones informadas y construir una base financiera sólida que te llevará hacia el éxito y la independencia financiera! ¡Te esperamos!</p>
+  </div>
+
+  <div class="section-header">CONTENIDO TEMÁTICO</div>
+  <div class="topics-grid">
+
+    <div class="topic-card">
+      <div class="topic-card-header">
+        <div class="topic-num">1</div>
+        <div class="topic-name">Metas Financieras a Corto, Mediano y Largo Plazo</div>
+      </div>
+      <ul class="topic-subtopics">
+        <li>¿Cómo definir objetivos S. M. A. R. T.?</li>
+        <li>Metas a Corto Plazo</li>
+        <li>Metas a Mediano Plazo</li>
+        <li>Metas a Largo Plazo</li>
+        <li>Estrategias para la Consecución de Metas</li>
+      </ul>
+    </div>
+
+    <div class="topic-card">
+      <div class="topic-card-header">
+        <div class="topic-num">2</div>
+        <div class="topic-name">Presupuesto Personal</div>
+      </div>
+      <ul class="topic-subtopics">
+        <li>Introducción</li>
+        <li>Conceptos Básicos</li>
+        <li>¿Cómo crear un presupuesto?</li>
+      </ul>
+    </div>
+
+    <div class="topic-card">
+      <div class="topic-card-header">
+        <div class="topic-num">3</div>
+        <div class="topic-name">El Arte del Ahorro</div>
+      </div>
+      <ul class="topic-subtopics">
+        <li>¿Cómo y para qué ahorrar?</li>
+        <li>Importancia</li>
+        <li>Fondo de Emergencia</li>
+      </ul>
+    </div>
+
+    <div class="topic-card">
+      <div class="topic-card-header">
+        <div class="topic-num">4</div>
+        <div class="topic-name">Manejo de Deudas</div>
+      </div>
+      <ul class="topic-subtopics">
+        <li>¿Por qué es importante saber manejar mis deudas?</li>
+        <li>Priorizar y abordar mis deudas</li>
+        <li>Deudas y apalancamiento</li>
+      </ul>
+    </div>
+
+    <div class="topic-card">
+      <div class="topic-card-header">
+        <div class="topic-num">5</div>
+        <div class="topic-name">Generación de Ingresos</div>
+      </div>
+      <ul class="topic-subtopics">
+        <li>Búsqueda de empleo e implicaciones financieras</li>
+        <li>Aspectos financieros para cuando soy emprendedor</li>
+        <li>Los cuadrantes del dinero</li>
+      </ul>
+    </div>
+
+    <div class="topic-card">
+      <div class="topic-card-header">
+        <div class="topic-num">6</div>
+        <div class="topic-name">Lo Que Hay Que Saber de los Impuestos</div>
+      </div>
+      <ul class="topic-subtopics">
+        <li>Introducción y Conceptos Básicos</li>
+        <li>Tipos de Impuestos a Considerar</li>
+        <li>¿Cómo pagar menos impuestos?</li>
+      </ul>
+    </div>
+
+    <div class="topic-card">
+      <div class="topic-card-header">
+        <div class="topic-num">7</div>
+        <div class="topic-name">El Apasionante Mundo de las Inversiones</div>
+      </div>
+      <ul class="topic-subtopics">
+        <li>Conceptos Básicos</li>
+        <li>Riesgos y beneficios</li>
+        <li>Diversificación</li>
+      </ul>
+    </div>
+
+    <div class="topic-card">
+      <div class="topic-card-header">
+        <div class="topic-num">8</div>
+        <div class="topic-name">Asegura Tu Dinero y Tu Patrimonio</div>
+      </div>
+      <ul class="topic-subtopics">
+        <li>Introducción</li>
+        <li>¿Qué es el deducible y el coaseguro?</li>
+        <li>¿Qué activos proteger?</li>
+      </ul>
+    </div>
+
+    <div class="topic-card">
+      <div class="topic-card-header">
+        <div class="topic-num">9</div>
+        <div class="topic-name">Retiro y Jubilación</div>
+      </div>
+      <ul class="topic-subtopics">
+        <li>AFOREs</li>
+        <li>Plan personal de retiro</li>
+        <li>El retiro y las implicaciones fiscales</li>
+      </ul>
+    </div>
+
+    <div class="topic-card">
+      <div class="topic-card-header">
+        <div class="topic-num">10</div>
+        <div class="topic-name">Educación Financiera Futura</div>
+      </div>
+      <ul class="topic-subtopics">
+        <li>Continuar aprendiendo</li>
+        <li>Siguientes pasos</li>
+        <li>Algunos extras</li>
+      </ul>
+    </div>
+
+  </div>
+</div>
+
+<!-- ═══════════════ PÁGINA 2 ═══════════════ -->
+<div class="page">
+
+  <div class="section-header">¿QUÉ NECESITO?</div>
+  <div class="needs-banner">
+    <div class="need-item">
+      <div class="need-icon">💻</div>
+      Computadora
+    </div>
+    <div class="need-item">
+      <div class="need-icon">🎥</div>
+      Web Cam y Micro
+    </div>
+    <div class="need-item">
+      <div class="need-icon">🌐</div>
+      Zoom e Internet
+    </div>
+    <div class="need-item">
+      <div class="need-icon">📱</div>
+      Celular
+    </div>
+  </div>
+
+  <div class="section-header" style="margin-top:24px">PRÁCTICAS</div>
+  <div class="practices-header-row">Prácticas Por Sesión</div>
+  <ul class="practices-list">
+    <li><span class="dot"></span>Mi Plan Financiero</li>
+    <li><span class="dot"></span>Hábito atómico de ahorro diario y creación de presupuesto</li>
+    <li><span class="dot"></span>¿En qué AFORE estoy? ¿Cómo está mi situación en INFONAVIT o FOVISSSTE?</li>
+    <li><span class="dot"></span>Combatir la inflación mediante una cuenta que genere rendimientos</li>
+    <li><span class="dot"></span>¿Cómo elegir y entender las TDCs?</li>
+    <li><span class="dot"></span>Mi Score Crediticio y Situación Fiscal</li>
+    <li><span class="dot"></span>Invertir y Diversificar</li>
+    <li><span class="dot"></span>Simuladores y Comparadores</li>
+    <li><span class="dot"></span>Simulador Para el Retiro</li>
+    <li><span class="dot"></span>Descuentos y más descuentos</li>
+  </ul>
+
+  <div class="footer">
+    <strong>Nívisix Soluciones</strong> &nbsp;·&nbsp; nivisix.soluciones@gmail.com &nbsp;·&nbsp; WhatsApp: <strong>+52 (55) 8344-8491</strong>
+  </div>
+
+</div>
+
+</body>
+</html>
