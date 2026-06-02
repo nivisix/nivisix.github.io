@@ -1,0 +1,110 @@
+
+<style>
+.wrap { padding: 1rem 0; }
+.slider-row { display: flex; align-items: center; gap: 12px; margin-bottom: 1rem; }
+.slider-row label { font-size: 13px; color: var(--color-text-secondary); min-width: 110px; }
+.slider-row input[type=range] { flex: 1; }
+.slider-val { font-size: 14px; font-weight: 500; color: var(--color-text-primary); min-width: 90px; text-align: right; }
+
+.bar-wrap { margin: 1.5rem 0 1rem; }
+.bar-track { display: flex; height: 14px; border-radius: 99px; overflow: hidden; width: 100%; }
+.seg { transition: width 0.3s; height: 100%; }
+
+.cards { display: grid; grid-template-columns: repeat(3, minmax(0,1fr)); gap: 10px; margin-bottom: 1.5rem; }
+.bcard { border-radius: var(--border-radius-md); padding: 14px 14px 12px; }
+.bcard .blabel { font-size: 11px; font-weight: 500; letter-spacing: 0.07em; text-transform: uppercase; margin-bottom: 2px; }
+.bcard .bamt { font-size: 20px; font-weight: 500; margin-bottom: 4px; }
+.bcard .bpct { font-size: 12px; }
+.bcard .bexamples { font-size: 11px; margin-top: 8px; line-height: 1.6; border-top: 0.5px solid rgba(0,0,0,0.08); padding-top: 8px; }
+
+.tip-row { display: flex; gap: 10px; align-items: flex-start; padding: 12px 14px; background: var(--color-background-secondary); border-radius: var(--border-radius-md); margin-bottom: 1rem; }
+.tip-row i { font-size: 16px; color: var(--color-text-tertiary); flex-shrink: 0; margin-top: 2px; }
+.tip-row p { font-size: 12px; color: var(--color-text-secondary); margin: 0; line-height: 1.55; }
+
+.methods { display: grid; grid-template-columns: repeat(auto-fit, minmax(160px, 1fr)); gap: 10px; margin-bottom: 1rem; }
+.mcard { background: var(--color-background-primary); border: 0.5px solid var(--color-border-tertiary); border-radius: var(--border-radius-md); padding: 12px 14px; }
+.mcard .mname { font-size: 13px; font-weight: 500; color: var(--color-text-primary); margin-bottom: 4px; }
+.mcard .mdesc { font-size: 12px; color: var(--color-text-secondary); line-height: 1.5; }
+
+.btn-next { margin-top: 4px; }
+</style>
+
+<h2 class="sr-only">Calculadora interactiva de presupuesto personal con la regla 50/30/20</h2>
+<div class="wrap">
+
+  <div class="slider-row">
+    <label>Ingreso mensual neto</label>
+    <input type="range" id="ingreso" min="5000" max="100000" value="20000" step="500" oninput="update()" />
+    <span class="slider-val" id="ingreso-out">$20,000</span>
+  </div>
+
+  <div class="bar-wrap">
+    <div class="bar-track">
+      <div class="seg" id="seg1" style="background:#185FA5; width:50%;"></div>
+      <div class="seg" id="seg2" style="background:#1D9E75; width:30%;"></div>
+      <div class="seg" id="seg3" style="background:#EF9F27; width:20%;"></div>
+    </div>
+  </div>
+
+  <div class="cards">
+    <div class="bcard" style="background:#E6F1FB;">
+      <div class="blabel" style="color:#185FA5;">Necesidades</div>
+      <div class="bamt" id="c1" style="color:#0C447C;">$10,000</div>
+      <div class="bpct" style="color:#185FA5;">50% de tus ingresos</div>
+      <div class="bexamples" style="color:#185FA5;">Renta · Comida · Transporte · Servicios · Salud</div>
+    </div>
+    <div class="bcard" style="background:#E1F5EE;">
+      <div class="blabel" style="color:#0F6E56;">Deseos</div>
+      <div class="bamt" id="c2" style="color:#085041;">$6,000</div>
+      <div class="bpct" style="color:#0F6E56;">30% de tus ingresos</div>
+      <div class="bexamples" style="color:#0F6E56;">Salidas · Streaming · Ropa · Viajes · Hobbies</div>
+    </div>
+    <div class="bcard" style="background:#FAEEDA;">
+      <div class="blabel" style="color:#854F0B;">Ahorro e inversión</div>
+      <div class="bamt" id="c3" style="color:#633806;">$4,000</div>
+      <div class="bpct" style="color:#854F0B;">20% de tus ingresos</div>
+      <div class="bexamples" style="color:#854F0B;">Fondo emergencia · Inversiones · Retiro · Metas</div>
+    </div>
+  </div>
+
+  <div class="tip-row">
+    <i class="ti ti-info-circle" aria-hidden="true"></i>
+    <p>Si tus necesidades superan el 50%, no es tu culpa — es señal de que necesitas revisar gastos fijos (renta, deudas) o aumentar ingresos. El 20% de ahorro es el mínimo recomendable; si puedes más, mejor.</p>
+  </div>
+
+  <div style="font-size:13px;font-weight:500;color:var(--color-text-secondary);margin-bottom:10px;text-transform:uppercase;letter-spacing:0.06em;">Otros métodos de presupuesto</div>
+  <div class="methods">
+    <div class="mcard">
+      <div class="mname">Sobre de efectivo</div>
+      <div class="mdesc">Divides tu dinero físico en sobres por categoría. Cuando el sobre se vacía, no hay más gasto en esa categoría.</div>
+    </div>
+    <div class="mcard">
+      <div class="mname">Presupuesto base cero</div>
+      <div class="mdesc">Asignas cada peso de tu ingreso a una categoría hasta llegar a cero. No sobra ni un peso sin destino.</div>
+    </div>
+    <div class="mcard">
+      <div class="mname">Anti-presupuesto</div>
+      <div class="mdesc">Primero apartas el ahorro (págate a ti mismo), y lo que queda lo gastas libremente sin rastrear.</div>
+    </div>
+    <div class="mcard">
+      <div class="mname">Apps de finanzas</div>
+      <div class="mdesc">Finerio, Spendee, YNAB. Conectan con tus cuentas y categorizan gastos automáticamente.</div>
+    </div>
+  </div>
+
+  <button class="btn-next" onclick="sendPrompt('Cómo construyo mi presupuesto personal paso a paso desde cero')">¿Cómo armo mi presupuesto desde cero? ↗</button>
+</div>
+
+<script>
+function fmt(n) {
+  return '$' + Math.round(n).toLocaleString('es-MX');
+}
+function update() {
+  const v = parseInt(document.getElementById('ingreso').value);
+  document.getElementById('ingreso-out').innerText = fmt(v);
+  document.getElementById('c1').innerText = fmt(v * 0.5);
+  document.getElementById('c2').innerText = fmt(v * 0.3);
+  document.getElementById('c3').innerText = fmt(v * 0.2);
+}
+update();
+</script>
