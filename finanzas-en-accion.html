@@ -91,6 +91,22 @@
                 estrategias prácticas y sin tecnicismos. Un curso diseñado
                 para que actúes hoy y veas resultados reales.
             </p>
+            <div class="hero-info">
+                <div class="hero-pricing" id="heroPricing">
+                    <span class="info-label">Inversión</span>
+                    <div class="pricing-amounts">
+                        <span class="price-original">$800 MXN</span>
+                        <span class="price-discount">$600 MXN</span>
+                    </div>
+                    <span class="pricing-note">Precio con código de descuento aplicado</span>
+                </div>
+                <ul class="hero-schedule">
+                    <li><span class="info-label">El curso incluye</span></li>
+                    <li><span class="schedule-icon">📚</span> 6 sesiones en línea</li>
+                    <li><span class="schedule-icon">📅</span> Todos los jueves</li>
+                    <li><span class="schedule-icon">⏱️</span> 1.5 hrs por sesión</li>
+                </ul>
+            </div>
             <div class="hero-cta">
                 <a href="#inscribirse" class="btn btn-gold btn-lg">Quiero inscribirme</a>
                 <a href="#video" class="btn btn-ghost-dark btn-lg">Ver presentación</a>
@@ -344,7 +360,11 @@
     // Código de referido desde URL (?code=xxx)
     (function () {
         var code = new URLSearchParams(window.location.search).get('code');
-        if (code) document.getElementById('contact-us-branding').value = code;
+        if (code) {
+            document.getElementById('contact-us-branding').value = code;
+            var pricing = document.getElementById('heroPricing');
+            if (pricing) pricing.classList.add('is-discounted');
+        }
     })();
 
     (function () { emailjs.init("1ocDG1AbCBuCfKdMP"); })();
