@@ -672,6 +672,51 @@ strong { color: var(--text); }
     display: block;
 }
 
+/* Lista de temas (visible siempre, útil cuando el PDF no carga en móvil) */
+.topics-list {
+    margin-bottom: 36px;
+    padding: 28px 32px;
+    background: #fff;
+    border: 1px solid var(--border);
+    border-radius: var(--radius-lg);
+    box-shadow: var(--shadow-md);
+}
+.topics-list-title {
+    font-size: 20px;
+    font-weight: 700;
+    color: var(--gold);
+    margin: 0 0 18px;
+    letter-spacing: 0.2px;
+}
+.topics-list-items {
+    margin: 0;
+    padding-left: 22px;
+    columns: 2;
+    column-gap: 32px;
+}
+.topics-list-items li {
+    margin-bottom: 10px;
+    padding-left: 6px;
+    line-height: 1.5;
+    break-inside: avoid;
+}
+.topics-list-items li strong { color: var(--text); }
+
+@media (max-width: 640px) {
+    .topics-list       { padding: 22px 20px; }
+    .topics-list-items { columns: 1; }
+}
+
+/* Link del horario en el hero */
+.schedule-link {
+    color: inherit;
+    text-decoration: underline;
+    text-decoration-color: var(--gold-light);
+    text-underline-offset: 3px;
+    transition: color 0.2s ease;
+}
+.schedule-link:hover { color: var(--gold-light); }
+
 /* ============================================================
    BOTÓN FLOTANTE WHATSAPP
    ============================================================ */
